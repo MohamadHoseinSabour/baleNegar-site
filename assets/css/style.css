@@ -540,14 +540,14 @@ a {
   background-color: var(--white);
   color: var(--gray-800);
   align-self: flex-start;
-  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .message-sent {
   background-color: #d1f4ec;
   color: var(--gray-800);
   align-self: flex-end;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 .message-time {

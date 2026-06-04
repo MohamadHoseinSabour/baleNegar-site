@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Definitions for gradients and shadows -->
+  <defs>
+    <linearGradient id="baleGreenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3ce6b4" />
+      <stop offset="100%" stop-color="#219c77" />
+    </linearGradient>
+    <linearGradient id="wpNavyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a63" />
+      <stop offset="100%" stop-color="#091e42" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="2" dy="6" stdDeviation="8" flood-color="#091e42" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Background Base / Icon Container (Optional, but looks premium) -->
+  <circle cx="256" cy="256" r="240" fill="url(#wpNavyGradient)" filter="url(#dropShadow)" />
+
+  <!-- Outer Ring (Accent) -->
+  <circle cx="256" cy="256" r="225" fill="none" stroke="#2DC297" stroke-width="6" stroke-dasharray="10 15" opacity="0.6" />
+
+  <!-- Bale Messenger Chat Bubble Shape -->
+  <!-- Top-left to bottom-right flow, with Bale-like tail on bottom-right or bottom-left -->
+  <path d="M 130 150 
+           C 130 110, 382 110, 382 150 
+           C 382 240, 382 280, 382 320 
+           C 382 360, 320 360, 280 360
+           L 200 410
+           L 220 360
+           C 130 360, 130 320, 130 280
+           Z" 
+        fill="url(#baleGreenGradient)" />
+
+  <!-- Decorative Inner Chat Details / Notification Line -->
+  <rect x="200" y="190" width="112" height="24" rx="12" fill="#FFFFFF" opacity="0.9" />
+  <rect x="180" y="238" width="152" height="24" rx="12" fill="#FFFFFF" opacity="0.9" />
+  
+  <!-- Interactive Dot / Green-WordPress Link Indicator -->
+  <circle cx="340" cy="202" r="14" fill="#091e42" />
+  <circle cx="160" cy="250" r="14" fill="#091e42" />
+
+  <!-- Pen / Negar Element writing on the chat bubble (Integrating WordPress management) -->
+  <g transform="translate(256, 256) rotate(-45) translate(-256, -256)">
+    <!-- Pen body -->
+    <rect x="240" y="130" width="32" height="150" rx="8" fill="#FFFFFF" filter="url(#dropShadow)" />
+    <!-- Pen tip -->
+    <path d="M 240 280 L 256 310 L 272 280 Z" fill="#A0DFF9" />
+    <!-- Pen tip metal/gold collar -->
+    <rect x="240" y="260" width="32" height="12" fill="#219c77" />
+    <!-- Pen eraser / top -->
+    <rect x="240" y="130" width="32" height="16" rx="4" fill="#091e42" />
+  </g>
+
+  <!-- WordPress integration subtle symbol in pen background -->
+  <circle cx="256" cy="256" r="36" fill="#091e42" stroke="#FFFFFF" stroke-width="4" />
+  <path d="M 238 240 
+           L 248 274 
+           L 256 250 
+           L 264 274 
+           L 274 240 
+           L 262 240 
+           L 256 262 
+           L 250 240 Z" fill="#2DC297" />
+</svg>

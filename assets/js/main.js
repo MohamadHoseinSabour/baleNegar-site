@@ -226,10 +226,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 800);
   }
 
+  let hasAnimatedChatSimulator = false;
+
   // Handle sidebar control card clicks
   controlCards.forEach(card => {
     card.addEventListener('click', () => {
       if (card.classList.contains('active')) return;
+      
+      hasAnimatedChatSimulator = true;
 
       controlCards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
@@ -244,8 +248,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Load first scenario (orders) on start
-  showMessage('orders');
+  // Load first scenario (orders) when the simulator section is scrolled into view
+  const simulatorSection = document.getElementById('simulator');
+  const chatSimulatorObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimatedChatSimulator) {
+        hasAnimatedChatSimulator = true;
+        showMessage('orders');
+        chatSimulatorObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  if (simulatorSection) {
+    chatSimulatorObserver.observe(simulatorSection);
+  }
 
   // --- ADMIN PANEL SIMULATOR (TEMPLATE EDITOR) ---
   const adminTabs = document.querySelectorAll('.admin-tab');

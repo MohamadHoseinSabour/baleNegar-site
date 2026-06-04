@@ -12,7 +12,7 @@
       --bale-green: #2DC297;
       --bale-green-dark: #1b9e76;
       --bale-green-light: #44dbb1;
-      --bale-green-bg: rgba(45, 194, 151, 0.06);
+      --bale-green-bg: rgba(45, 194, 151, 0.08);
       --bale-green-glow: rgba(45, 194, 151, 0.25);
       
       --wp-navy: #0A1E42;
@@ -39,9 +39,6 @@
       --shadow-sm: 0 4px 12px rgba(9, 30, 66, 0.02);
       --shadow-md: 0 12px 32px rgba(9, 30, 66, 0.06);
       --shadow-lg: 0 32px 64px rgba(9, 30, 66, 0.1);
-      
-      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     /* --- GLOBAL STYLES --- */
@@ -74,9 +71,6 @@
     ::-webkit-scrollbar-thumb {
       background: var(--bale-green);
       border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--bale-green-dark);
     }
 
     .infographic-wrapper {
@@ -113,29 +107,17 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background-color: var(--neutral-50);
+      background-color: var(--bale-green-bg);
       padding: 10px 28px;
       border-radius: 100px;
-      border: 1px solid var(--neutral-200);
+      border: 1px solid rgba(45, 194, 151, 0.2);
       margin-bottom: 24px;
-      transition: all var(--transition-normal);
       box-shadow: var(--shadow-sm);
-    }
-
-    .logo-container:hover {
-      transform: translateY(-2px);
-      background-color: var(--bale-green-bg);
-      border-color: rgba(45, 194, 151, 0.2);
     }
 
     .logo-icon {
       width: 38px;
       height: 38px;
-      transition: transform var(--transition-normal);
-    }
-
-    .logo-container:hover .logo-icon {
-      transform: rotate(10deg) scale(1.1);
     }
 
     .logo-text {
@@ -152,15 +134,15 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, rgba(45, 194, 151, 0.1) 0%, rgba(45, 194, 151, 0.03) 100%);
-      border: 1px solid rgba(45, 194, 151, 0.2);
-      color: var(--bale-green-dark);
+      background: linear-gradient(135deg, rgba(253, 224, 71, 0.15) 0%, rgba(253, 224, 71, 0.02) 100%);
+      border: 1px solid rgba(253, 224, 71, 0.3);
+      color: #eab308;
       font-size: 0.88rem;
       font-weight: 800;
       padding: 8px 20px;
       border-radius: 100px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(45, 194, 151, 0.05);
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.1);
       position: relative;
     }
 
@@ -168,10 +150,10 @@
       content: '';
       width: 8px;
       height: 8px;
-      background-color: var(--bale-green);
+      background-color: #eab308;
       border-radius: 50%;
       display: inline-block;
-      box-shadow: 0 0 8px var(--bale-green);
+      box-shadow: 0 0 8px #eab308;
       animation: pulse-dot 1.5s infinite;
     }
 
@@ -287,7 +269,6 @@
       border: 4px solid var(--bale-green);
       border-radius: 50%;
       box-shadow: 0 0 12px rgba(45, 194, 151, 0.4);
-      transition: all var(--transition-normal);
     }
 
     .timeline-step.left::after {
@@ -298,27 +279,14 @@
       right: -8px;
     }
 
-    .timeline-step:hover::after {
-      background-color: var(--bale-green-light);
-      transform: scale(1.3);
-      box-shadow: 0 0 18px var(--bale-green-glow);
-    }
-
     .timeline-card {
       background: var(--white);
-      border: 1px solid var(--neutral-200);
+      border: 1.5px solid var(--bale-green);
       border-radius: var(--radius-lg);
       padding: 28px;
-      box-shadow: var(--shadow-sm);
-      max-width: 420px;
-      transition: all var(--transition-normal);
-      text-align: right;
-    }
-
-    .timeline-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--bale-green);
       box-shadow: var(--shadow-md);
+      max-width: 420px;
+      text-align: right;
     }
 
     .timeline-num {
@@ -360,11 +328,10 @@
 
     .bento-card {
       background: var(--white);
-      border: 1px solid var(--neutral-200);
+      border: 1.5px solid rgba(45, 194, 151, 0.25);
       border-radius: var(--radius-lg);
       padding: 32px;
-      box-shadow: var(--shadow-sm);
-      transition: all var(--transition-normal);
+      box-shadow: var(--shadow-md);
       position: relative;
       overflow: hidden;
       display: flex;
@@ -379,17 +346,6 @@
       right: 0;
       width: 6px;
       height: 100%;
-      background: var(--neutral-200);
-      transition: all var(--transition-normal);
-    }
-
-    .bento-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(45, 194, 151, 0.25);
-    }
-
-    .bento-card:hover::before {
       background: linear-gradient(180deg, var(--bale-green-light) 0%, var(--bale-green) 100%);
     }
 
@@ -401,17 +357,12 @@
       width: 52px;
       height: 52px;
       border-radius: 16px;
-      background-color: var(--neutral-100);
+      background-color: var(--bale-green-bg);
+      color: var(--bale-green-dark);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.6rem;
-      transition: all var(--transition-normal);
-    }
-
-    .bento-card:hover .bento-icon-box {
-      background-color: var(--bale-green-bg);
-      transform: scale(1.08) rotate(5deg);
     }
 
     .bento-title {
@@ -426,116 +377,25 @@
       line-height: 1.7;
     }
 
-    /* --- INTERACTIVE CHAT CONSOLE --- */
-    .chat-console-grid {
+    /* --- HIGH FIDELITY SIDE-BY-SIDE MOBILE MOCKUPS --- */
+    .mockups-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .scenario-selector {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .scenario-btn {
-      background: var(--white);
-      border: 1px solid var(--neutral-200);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      cursor: pointer;
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      text-align: right;
-      transition: all var(--transition-normal);
-      font-family: inherit;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .scenario-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 5px;
-      background: transparent;
-      transition: all var(--transition-normal);
-    }
-
-    .scenario-btn:hover {
-      border-color: rgba(45, 194, 151, 0.25);
-      transform: translateX(-4px);
-    }
-
-    .scenario-btn.active {
-      border-color: var(--bale-green);
-      background-color: var(--bale-green-bg);
-      box-shadow: var(--shadow-md);
-    }
-
-    .scenario-icon {
-      font-size: 1.8rem;
-      background: var(--neutral-100);
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: all var(--transition-normal);
-    }
-
-    .scenario-btn.active .scenario-icon {
-      background: var(--white);
-      box-shadow: 0 4px 10px rgba(45, 194, 151, 0.15);
-    }
-
-    .scenario-info {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .scenario-title {
-      font-size: 1.1rem;
-      font-weight: 850;
-      color: var(--wp-navy);
-    }
-
-    .scenario-desc {
-      font-size: 0.85rem;
-      color: var(--neutral-600);
-      line-height: 1.6;
-    }
-
-    /* Bezel-less Mobile Mockup */
-    .mockup-wrapper {
-      display: flex;
-      justify-content: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
     }
 
     .mockup-device {
-      width: 320px;
-      height: 540px;
       background: #0f172a;
-      border: 10px solid #1e293b;
-      border-radius: 40px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      position: relative;
+      border: 8px solid #1e293b;
+      border-radius: 36px;
+      padding: 20px 14px;
       display: flex;
       flex-direction: column;
-      transition: all var(--transition-normal);
-    }
-
-    .mockup-device:hover {
-      box-shadow: 0 40px 80px rgba(45, 194, 151, 0.15);
-      border-color: #273549;
+      height: 100%;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
     }
 
     .mockup-notch {
@@ -543,22 +403,25 @@
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 120px;
-      height: 18px;
+      width: 100px;
+      height: 14px;
       background-color: #1e293b;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
       z-index: 10;
     }
 
     .mockup-screen-header {
       background-color: var(--wp-navy);
-      padding: 24px 16px 12px;
+      padding: 12px 12px 10px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       color: var(--white);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      margin-top: 4px;
     }
 
     .mockup-header-avatar {
@@ -579,12 +442,12 @@
     }
 
     .mockup-bot-name {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 800;
     }
 
     .mockup-bot-status {
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       color: var(--bale-green-light);
       display: flex;
       align-items: center;
@@ -595,14 +458,12 @@
       content: '●';
       color: var(--bale-green-light);
       font-size: 0.5rem;
-      animation: pulse-dot 1.8s infinite;
     }
 
     .mockup-chat-area {
       flex-grow: 1;
       background-color: #f1f5f9;
-      padding: 16px;
-      overflow-y: auto;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -612,16 +473,10 @@
       background-color: var(--white);
       border-radius: 16px 0 16px 16px;
       padding: 14px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--neutral-800);
       line-height: 1.7;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      animation: bubble-fade 0.4s ease both;
-    }
-
-    @keyframes bubble-fade {
-      from { opacity: 0; transform: translateY(10px) scale(0.95); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     .bale-bubble code {
@@ -659,25 +514,21 @@
       font-size: 0.78rem;
       font-weight: 800;
       text-align: center;
-      cursor: pointer;
-      transition: all var(--transition-fast);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .bale-btn:hover {
-      background-color: var(--bale-green-bg);
-      transform: scale(1.02);
+    .bale-btn.active {
+      background-color: var(--bale-green);
+      color: var(--white);
+      border-color: var(--bale-green);
+      box-shadow: 0 4px 12px rgba(45, 194, 151, 0.25);
     }
 
     .bale-btn.secondary {
       border-color: var(--neutral-300);
       color: var(--neutral-600);
-    }
-
-    .bale-btn.secondary:hover {
-      background-color: var(--neutral-100);
     }
 
     /* --- COMPARISON DASHBOARD --- */
@@ -698,12 +549,6 @@
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-md);
-      transition: all var(--transition-normal);
-    }
-
-    .comparison-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
     }
 
     .comparison-card.red-gradient {
@@ -713,7 +558,8 @@
 
     .comparison-card.green-gradient {
       background: linear-gradient(135deg, #0f1f1a 0%, #08120e 100%);
-      border: 1px solid rgba(45, 194, 151, 0.35);
+      border: 1.5px solid rgba(45, 194, 151, 0.45);
+      box-shadow: 0 12px 32px rgba(45, 194, 151, 0.15);
     }
 
     .card-icon {
@@ -756,11 +602,11 @@
     .savings-summary-box {
       margin-top: 36px;
       background-color: var(--neutral-50);
-      border: 1px solid var(--neutral-200);
+      border: 1.5px solid var(--bale-green);
       border-radius: var(--radius-lg);
       padding: 30px 40px;
       text-align: center;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 12px 32px rgba(45, 194, 151, 0.1);
     }
 
     .savings-counter {
@@ -824,31 +670,14 @@
 
     .spec-badge {
       background: var(--white);
-      border: 1px solid var(--neutral-200);
-      color: var(--wp-navy);
+      border: 1.5px solid var(--bale-green);
+      color: var(--bale-green-dark);
+      background-color: var(--bale-green-bg);
       padding: 8px 18px;
       border-radius: 100px;
       font-size: 0.85rem;
       font-weight: 750;
-      box-shadow: var(--shadow-sm);
-      transition: all var(--transition-fast);
-    }
-
-    .spec-badge:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--neutral-300);
-    }
-
-    .spec-badge.highlight {
-      border-color: var(--bale-green);
-      color: var(--bale-green-dark);
-      background-color: var(--bale-green-bg);
-    }
-
-    .spec-badge.highlight:hover {
-      background-color: rgba(45, 194, 151, 0.12);
-      box-shadow: 0 4px 12px rgba(45, 194, 151, 0.15);
+      box-shadow: 0 4px 12px rgba(45, 194, 151, 0.1);
     }
 
     /* --- RESPONSIVE MEDIA QUERIES --- */
@@ -874,12 +703,10 @@
       .features-bento-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .chat-console-grid {
+      .mockups-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-      }
-      .mockup-wrapper {
-        order: -1;
+        max-width: 420px;
+        margin: 0 auto;
       }
       .comparison-dashboard {
         grid-template-columns: 1fr;
@@ -1023,59 +850,97 @@
       </div>
     </section>
 
-    <!-- --- INTERACTIVE CHAT CONSOLE --- -->
+    <!-- --- STATIC BALE MOCKUPS --- -->
     <section class="info-section">
-      <h2 class="section-headline">پیش‌نمایش تعاملی اعلان‌ها در بله</h2>
-      
-      <div class="chat-console-grid">
+      <h2 class="section-headline">پیش‌نمایش اعلان‌های دریافتی در بله</h2>
+      <div class="mockups-grid">
         
-        <!-- Controls -->
-        <div class="scenario-selector">
-          <button class="scenario-btn active" onclick="switchScenario('orders', this)">
-            <div class="scenario-icon">🛍️</div>
-            <div class="scenario-info">
-              <h3 class="scenario-title">اعلان سفارش جدید ووکامرس</h3>
-              <p class="scenario-desc">رصد تراکنش‌ها و اقلام خرید با دکمه تعاملی تغییر وضعیت به تکمیل شده یا در حال پردازش.</p>
+        <!-- Mockup 1: Orders -->
+        <div class="mockup-device">
+          <div class="mockup-notch"></div>
+          <div class="mockup-screen-header">
+            <div class="mockup-header-avatar">BN</div>
+            <div class="mockup-header-text">
+              <span class="mockup-bot-name">بازوی بله‌نگار</span>
+              <span class="mockup-bot-status">ربات هوشمند</span>
             </div>
-          </button>
+          </div>
           
-          <button class="scenario-btn" onclick="switchScenario('comments', this)">
-            <div class="scenario-icon">💬</div>
-            <div class="scenario-info">
-              <h3 class="scenario-title">دیدگاه جدید در وب‌سایت</h3>
-              <p class="scenario-desc">پاسخ متنی مستقیم یا تایید و رد دیدگاه‌های سایت بدون خروج از برنامه بله.</p>
+          <div class="mockup-chat-area">
+            <div class="bale-bubble">
+              🛍️ <b>سفارش جدید ثبت شد!</b><br><br>
+              🔹 شماره سفارش: <code>#4812</code><br>
+              👤 خریدار: محمدحسین صبور<br>
+              💵 مبلغ پرداختی: ۴۸۰,۰۰۰ تومان<br>
+              📦 اقلام سبد خرید:<br>
+              - افزونه بله‌نگار (۱ عدد)<br>
+              - لایسنس طلایی (۱ عدد)<br><br>
+              ✅ وضعیت سفارش: <b>پرداخت موفق</b>
+              <span class="bale-meta">۱۶:۱۵</span>
             </div>
-          </button>
-          
-          <button class="scenario-btn" onclick="switchScenario('stock', this)">
-            <div class="scenario-icon">🚨</div>
-            <div class="scenario-info">
-              <h3 class="scenario-title">هشدار موجودی انبار کالا</h3>
-              <p class="scenario-desc">اعلام لحظه‌ای کاهش کالاها به تعداد بحرانی با امکان ویرایش مستقیم محصول.</p>
-            </div>
-          </button>
+          </div>
+
+          <div class="mockup-keyboard-area">
+            <div class="bale-btn secondary">⏳ در حال پردازش</div>
+            <div class="bale-btn active">✅ تکمیل سفارش</div>
+            <div class="bale-btn secondary">💬 ثبت یادداشت مشتری</div>
+          </div>
         </div>
-        
-        <!-- Device Screen Mockup -->
-        <div class="mockup-wrapper">
-          <div class="mockup-device">
-            <div class="mockup-notch"></div>
-            
-            <div class="mockup-screen-header">
-              <div class="mockup-header-avatar">BN</div>
-              <div class="mockup-header-text">
-                <span class="mockup-bot-name">بازوی بله‌نگار</span>
-                <span class="mockup-bot-status">ربات هوشمند</span>
-              </div>
+
+        <!-- Mockup 2: Comments -->
+        <div class="mockup-device">
+          <div class="mockup-notch"></div>
+          <div class="mockup-screen-header">
+            <div class="mockup-header-avatar">BN</div>
+            <div class="mockup-header-text">
+              <span class="mockup-bot-name">بازوی بله‌نگار</span>
+              <span class="mockup-bot-status">ربات هوشمند</span>
             </div>
-            
-            <div class="mockup-chat-area" id="mockup-chat-area">
-              <!-- Dynamically populated bubble -->
+          </div>
+          
+          <div class="mockup-chat-area">
+            <div class="bale-bubble">
+              💬 <b>دیدگاه جدید ثبت شد!</b><br><br>
+              👤 نویسنده: علی رضایی<br>
+              ✍️ روی نوشته: <i>تأثیر اعلان تعاملی</i><br>
+              📝 متن دیدگاه:<br>
+              «این افزونه واقعاً سرعت کار مارو بالا برده، ممنون از تیم بله‌نگار.»
+              <span class="bale-meta">۱۶:۱۷</span>
             </div>
-            
-            <div class="mockup-keyboard-area" id="mockup-keyboard-area">
-              <!-- Dynamically populated buttons -->
+          </div>
+
+          <div class="mockup-keyboard-area">
+            <div class="bale-btn active">✅ تایید دیدگاه</div>
+            <div class="bale-btn secondary">🗑️ انتقال به زباله‌دان</div>
+            <div class="bale-btn secondary">✍️ پاسخ سریع</div>
+          </div>
+        </div>
+
+        <!-- Mockup 3: Inventory Warnings -->
+        <div class="mockup-device">
+          <div class="mockup-notch"></div>
+          <div class="mockup-screen-header">
+            <div class="mockup-header-avatar">BN</div>
+            <div class="mockup-header-text">
+              <span class="mockup-bot-name">بازوی بله‌نگار</span>
+              <span class="mockup-bot-status">ربات هوشمند</span>
             </div>
+          </div>
+          
+          <div class="mockup-chat-area">
+            <div class="bale-bubble">
+              🚨 <b>هشدار موجودی انبار!</b><br><br>
+              📦 محصول: <b>افزونه بله‌نگار (نسخه تست)</b><br>
+              🆔 شناسه کالا: <code>WP-BN-01</code><br><br>
+              ⚠️ موجودی رو به اتمام است:<br>
+              موجودی فعلی: <span style="color:#ef4444; font-weight:bold;">۲ عدد</span>
+              <span class="bale-meta">۱۶:۲۰</span>
+            </div>
+          </div>
+
+          <div class="mockup-keyboard-area">
+            <div class="bale-btn active">✏️ ویرایش موجودی</div>
+            <div class="bale-btn secondary">📦 رفتن به صفحه محصول</div>
           </div>
         </div>
 
@@ -1132,16 +997,16 @@
           <span class="spec-title-label">پشتیبانی از افزونه‌ها:</span>
           <div class="badge-list">
             <span class="spec-badge highlight">WooCommerce</span>
-            <span class="spec-badge">Gravity Forms</span>
-            <span class="spec-badge">Contact Form 7</span>
+            <span class="spec-badge highlight">Gravity Forms</span>
+            <span class="spec-badge highlight">Contact Form 7</span>
           </div>
         </div>
 
         <div class="spec-group">
           <span class="spec-title-label">نیازمندی‌های سیستم:</span>
           <div class="badge-list">
-            <span class="spec-badge">WordPress 5.6+</span>
-            <span class="spec-badge">PHP 7.4+</span>
+            <span class="spec-badge highlight">WordPress 5.6+</span>
+            <span class="spec-badge highlight">PHP 7.4+</span>
           </div>
         </div>
 
@@ -1150,78 +1015,5 @@
 
   </div>
 
-  <!-- --- JAVASCRIPT FOR CHAT SIMULATION --- -->
-  <script>
-    const scenarios = {
-      orders: {
-        bubble: `🛍️ <b>سفارش جدید ثبت شد!</b><br><br>
-                 🔹 شماره سفارش: <code>#4812</code><br>
-                 👤 خریدار: محمدحسین صبور<br>
-                 💵 مبلغ پرداختی: ۴۸۰,۰۰۰ تومان<br>
-                 📦 اقلام سبد خرید:<br>
-                 - افزونه بله‌نگار (۱ عدد)<br>
-                 - لایسنس طلایی (۱ عدد)<br><br>
-                 ✅ وضعیت سفارش: <b>پرداخت موفق</b>
-                 <span class="bale-meta">۱۶:۱۵</span>`,
-        buttons: [
-          { text: '⏳ در حال پردازش', type: 'primary' },
-          { text: '✅ تکمیل سفارش', type: 'primary' },
-          { text: '💬 ثبت یادداشت مشتری', type: 'secondary' }
-        ]
-      },
-      comments: {
-        bubble: `💬 <b>دیدگاه جدید ثبت شد!</b><br><br>
-                 👤 نویسنده: علی رضایی<br>
-                 ✍️ روی نوشته: <i>تأثیر اعلان تعاملی</i><br>
-                 📝 متن دیدگاه:<br>
-                 «این افزونه واقعاً سرعت کار مارو بالا برده، ممنون از تیم بله‌نگار.»
-                 <span class="bale-meta">۱۶:۱۷</span>`,
-        buttons: [
-          { text: '✅ تایید دیدگاه', type: 'primary' },
-          { text: '🗑️ انتقال به زباله‌دان', type: 'secondary' },
-          { text: '✍️ پاسخ سریع', type: 'secondary' }
-        ]
-      },
-      stock: {
-        bubble: `🚨 <b>هشدار موجودی انبار!</b><br><br>
-                 📦 محصول: <b>افزونه بله‌نگار (نسخه تست)</b><br>
-                 🆔 شناسه کالا: <code>WP-BN-01</code><br><br>
-                 ⚠️ موجودی رو به اتمام است:<br>
-                 موجودی فعلی: <span style="color:#ef4444; font-weight:bold;">۲ عدد</span>
-                 <span class="bale-meta">۱۶:۲۰</span>`,
-        buttons: [
-          { text: '✏️ ویرایش موجودی', type: 'primary' },
-          { text: '📦 رفتن به صفحه محصول', type: 'secondary' }
-        ]
-      }
-    };
-
-    function switchScenario(scenarioKey, element) {
-      // Toggle selector buttons active class
-      const buttons = document.querySelectorAll('.scenario-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      element.classList.add('active');
-
-      const scenario = scenarios[scenarioKey];
-      const chatArea = document.getElementById('mockup-chat-area');
-      const keyboardArea = document.getElementById('mockup-keyboard-area');
-
-      // Update Chat Bubble
-      chatArea.innerHTML = `<div class="bale-bubble">${scenario.bubble}</div>`;
-
-      // Update Keyboard Buttons
-      keyboardArea.innerHTML = '';
-      scenario.buttons.forEach(btn => {
-        const classNames = btn.type === 'secondary' ? 'bale-btn secondary' : 'bale-btn';
-        keyboardArea.innerHTML += `<div class="${classNames}">${btn.text}</div>`;
-      });
-    }
-
-    // Initialize with orders scenario
-    document.addEventListener('DOMContentLoaded', () => {
-      const firstBtn = document.querySelector('.scenario-btn');
-      switchScenario('orders', firstBtn);
-    });
-  </script>
 </body>
 </html>

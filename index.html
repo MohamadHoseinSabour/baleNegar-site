@@ -544,31 +544,58 @@
   <!-- --- FINAL CTA SECTION --- -->
   <section class="section-cta" id="cta-section">
     <div class="container">
-      <div class="cta-glass-card">
-        <div class="cta-badge">
-          ⚡ لایسنس طلایی مادام‌العمر
+      <div class="cta-grid">
+        <!-- Content Column (Right on Desktop) -->
+        <div class="cta-content-col">
+          <div class="cta-badge">
+            ⚡ لایسنس طلایی مادام‌العمر
+          </div>
+          <h2 class="cta-title">سایت وردپرسی خود را به <span>جیبتان</span> متصل کنید!</h2>
+          <p class="cta-desc">
+            با تهیه افزونه بله‌نگار، از شر هزینه‌های پنل پیامک رها شوید و مدیریت لحظه‌ای سفارشات، دیدگاه‌ها و موجودی انبار سایت خود را با بالاترین سرعت و امنیت در پیام‌رسان بله تجربه کنید.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start; width: 100%;">
+            <a href="#" class="btn btn-cta">خرید و دانلود فوری افزونه</a>
+            <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">✓ پشتیبانی ۶ ماهه رایگان | ✓ ضمانت بازگشت وجه</span>
+          </div>
         </div>
-        <h2 class="cta-title">سایت وردپرسی خود را به <span>جیبتان</span> متصل کنید!</h2>
-        <p class="cta-desc">
-          با تهیه افزونه بله‌نگار، از شر هزینه‌های پنل پیامک رها شوید و مدیریت لحظه‌ای سفارشات، دیدگاه‌ها و موجودی انبار سایت خود را با بالاترین سرعت و امنیت در پیام‌رسان بله تجربه کنید.
-        </p>
         
-        <div class="cta-benefits">
-          <div class="cta-benefit-item">
-            <span class="cta-benefit-icon">🔌</span>
-            <span>راه‌اندازی در کمتر از ۵ دقیقه</span>
-          </div>
-          <div class="cta-benefit-item">
-            <span class="cta-benefit-icon">🔒</span>
-            <span>اتصال امن دو مرحله‌ای OTP</span>
-          </div>
-          <div class="cta-benefit-item">
-            <span class="cta-benefit-icon">🔄</span>
-            <span>بروزرسانی دائمی و خودکار</span>
+        <!-- Calculator Column (Left on Desktop) -->
+        <div class="cta-calc-col">
+          <div class="calc-card">
+            <h3 class="calc-title">🪙 ماشین حساب صرفه‌جویی مالی</h3>
+            <p class="calc-desc" style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 20px;">تعداد کل سفارشات و اعلان‌های ماهانه خود را مشخص کنید:</p>
+            
+            <div class="calc-slider-group" style="margin-bottom: 24px;">
+              <div class="calc-slider-header" style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 700; margin-bottom: 10px;">
+                <span>تعداد اعلانات در ماه:</span>
+                <span class="calc-value" id="calc-val-display" style="color: var(--bale-green-light);">۲,۰۰۰ پیام</span>
+              </div>
+              <input type="range" min="100" max="10000" step="100" value="2000" id="calc-slider" class="calc-slider" aria-label="تعداد اعلانات ماهانه">
+              <div class="calc-slider-labels" style="display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 6px;">
+                <span>۱۰۰</span>
+                <span>۵,۰۰۰</span>
+                <span>۱۰,۰۰۰+</span>
+              </div>
+            </div>
+
+            <div class="calc-results">
+              <div class="calc-result-row" style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.9rem;">
+                <span>هزینه پنل پیامک:</span>
+                <span class="calc-result-val text-red" id="calc-sms-cost">۲۴۰,۰۰۰ تومان</span>
+              </div>
+              <div class="calc-result-row" style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.9rem;">
+                <span>هزینه بله‌نگار:</span>
+                <span class="calc-result-val text-green" style="font-weight: 800; color: var(--bale-green-light);">۰ تومان (رایگان)</span>
+              </div>
+              <div class="calc-divider" style="height: 1px; background: rgba(255,255,255,0.08); margin: 16px 0;"></div>
+              <div class="calc-result-row highlight" style="display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center; margin-top: 10px;">
+                <span style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">میزان صرفه‌جویی سالانه شما:</span>
+                <span class="calc-total-savings" id="calc-total-savings" style="font-size: 1.8rem; font-weight: 900; color: var(--bale-green-light); text-shadow: 0 0 20px var(--bale-green-glow);">۲,۸۸۰,۰۰۰ تومان</span>
+              </div>
+            </div>
           </div>
         </div>
-
-        <a href="#" class="btn btn-cta">خرید و دانلود فوری افزونه</a>
       </div>
     </div>
   </section>

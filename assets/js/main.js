@@ -399,4 +399,35 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(el);
   });
+
+  // --- CTA SAVINGS CALCULATOR ---
+  const calcSlider = document.getElementById('calc-slider');
+  const calcValDisplay = document.getElementById('calc-val-display');
+  const calcSmsCost = document.getElementById('calc-sms-cost');
+  const calcTotalSavings = document.getElementById('calc-total-savings');
+
+  if (calcSlider) {
+    const formatNumber = (num) => {
+      // Format number to Persian numerals and add comma separators
+      const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+      const formattedNum = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return formattedNum.replace(/\d/g, d => persianDigits[parseInt(d)]);
+    };
+
+    const updateCalculator = () => {
+      const val = parseInt(calcSlider.value);
+      calcValDisplay.innerText = formatNumber(val) + ' پیام';
+
+      // Assume 120 Tomans per SMS
+      const smsCostMonthly = val * 120;
+      const annualSavings = smsCostMonthly * 12;
+
+      calcSmsCost.innerText = formatNumber(smsCostMonthly) + ' تومان';
+      calcTotalSavings.innerText = formatNumber(annualSavings) + ' تومان';
+    };
+
+    calcSlider.addEventListener('input', updateCalculator);
+    // Initialize calculator values
+    updateCalculator();
+  }
 });

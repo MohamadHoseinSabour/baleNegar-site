@@ -844,7 +844,7 @@ a {
 
 .admin-textarea {
   width: 100%;
-  height: 110px;
+  height: 180px;
   border: 1px solid var(--gray-300);
   border-radius: var(--radius-sm);
   padding: 12px;

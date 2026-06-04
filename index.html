@@ -257,8 +257,15 @@
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: stretch; gap: 16px;">
           <h4 class="admin-label">پیش‌نمایش زنده در چت بله:</h4>
           
-          <div style="background-color: #f0f2f5; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; min-height: 250px; justify-content: center;">
-            <div class="message-bubble message-received" style="max-width: 100%; align-self: stretch; animation: none;">
+          <div style="background-color: #f0f2f5; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; min-height: 250px; justify-content: center;" id="admin-preview-container">
+            <!-- Typing Indicator for Admin Preview -->
+            <div class="typing-indicator" id="admin-preview-typing" style="display: none; align-self: flex-start; background: var(--white); padding: 8px 12px; border-radius: 12px; margin-bottom: 8px;">
+              <div class="typing-dot"></div>
+              <div class="typing-dot"></div>
+              <div class="typing-dot"></div>
+            </div>
+            
+            <div class="message-bubble message-received" id="admin-preview-bubble" style="max-width: 100%; align-self: stretch; display: none;">
               <div id="admin-live-preview-message">
                 <!-- Will be dynamically populated by JS -->
               </div>
@@ -541,34 +548,9 @@
       <p class="cta-desc">
         با تهیه افزونه بله‌نگار، از شر هزینه‌های پنل پیامک رها شوید و مدیریت لحظه‌ای سفارشات و دیدگاه‌های سایت را با بالاترین امنیت در پیام‌رسان بله تجربه کنید.
       </p>
-      <a href="#" class="btn btn-primary btn-lg" style="font-size: 1.2rem; padding: 16px 36px; border-radius: 20px;">خرید و دانلود فوری افزونه (اطلاعات بیشتر)</a>
+      <a href="#" class="btn btn-primary btn-lg" style="font-size: 1.2rem; padding: 16px 36px; border-radius: 20px;">خرید و دانلود فوری افزونه</a>
     </div>
   </section>
-
-  <!-- --- FOOTER --- -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-logo">
-        <img src="assets/images/logo.svg" alt="بله‌نگار">
-        <span class="footer-logo-text">بله‌<span>نگار</span></span>
-      </div>
-      
-      <div class="footer-nav">
-        <a href="#home" class="footer-link">صفحه اصلی</a>
-        <a href="#simulator" class="footer-link">شبیه‌ساز چت</a>
-        <a href="#admin-sim" class="footer-link">شخصی‌سازی قالب</a>
-        <a href="#features" class="footer-link">ویژگی‌ها</a>
-        <a href="#faq" class="footer-link">سوالات متداول</a>
-      </div>
-      
-      <div class="footer-copy">
-        <p>تمامی حقوق محفوظ است. طراحی و پیاده‌سازی جهت معرفی افزونه بله‌نگار (BaleNegar).</p>
-        <p style="margin-top: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4);">
-          *توجه: دکمه‌های خرید در این نسخه آزمایشی جنبه ظاهری دارند و لینک اصلی در به‌روزرسانی‌های بعدی اعمال می‌شود.
-        </p>
-      </div>
-    </div>
-  </footer>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>

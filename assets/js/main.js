@@ -252,8 +252,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const adminTextarea = document.getElementById('admin-textarea');
   const variableChips = document.querySelectorAll('.variable-chip');
   const livePreviewMessage = document.getElementById('admin-live-preview-message');
+  
+  const adminPreviewContainer = document.getElementById('admin-preview-container');
+  const adminPreviewBubble = document.getElementById('admin-preview-bubble');
+  const adminPreviewTyping = document.getElementById('admin-preview-typing');
+  let hasAnimatedAdminPreview = false;
 
   let activeTemplateKey = 'orders';
+
+  function showAdminBubbleImmediately() {
+    if (hasAnimatedAdminPreview) return;
+    hasAnimatedAdminPreview = true;
+    if (adminPreviewTyping) adminPreviewTyping.style.display = 'none';
+    if (adminPreviewBubble) adminPreviewBubble.style.display = 'block';
+  }
 
   function updateLivePreview() {
     let templateText = adminTextarea.value;
@@ -270,6 +282,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle Tab Switch
   adminTabs.forEach(tab => {
     tab.addEventListener('click', () => {
+      showAdminBubbleImmediately();
+      
       adminTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
@@ -293,6 +307,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Insert Variable at Cursor Position in Textarea
   variableChips.forEach(chip => {
     chip.addEventListener('click', () => {
+      showAdminBubbleImmediately();
+      
       const varName = chip.dataset.var;
       const startPos = adminTextarea.selectionStart;
       const endPos = adminTextarea.selectionEnd;
@@ -310,11 +326,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Update preview on typing
-  adminTextarea.addEventListener('input', updateLivePreview);
+  adminTextarea.addEventListener('input', () => {
+    showAdminBubbleImmediately();
+    updateLivePreview();
+  });
 
   // Initialize Admin Editor with Orders tab and preview
   adminTextarea.value = defaultTemplates.orders;
   updateLivePreview();
+
+  // Live Preview Scroll Animation (Intersection Observer)
+  const adminPreviewObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimatedAdminPreview) {
+        hasAnimatedAdminPreview = true;
+        
+        // Show typing indicator
+        if (adminPreviewTyping) adminPreviewTyping.style.display = 'flex';
+        if (adminPreviewBubble) adminPreviewBubble.style.display = 'none';
+
+        setTimeout(() => {
+          if (adminPreviewTyping) adminPreviewTyping.style.display = 'none';
+          if (adminPreviewBubble) adminPreviewBubble.style.display = 'block';
+        }, 1200);
+
+        adminPreviewObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  if (adminPreviewContainer) {
+    adminPreviewObserver.observe(adminPreviewContainer);
+  }
 
   // Highlight scroll animation (Intersection Observer for animated cards)
   const observeElements = document.querySelectorAll('.feature-card, .control-card, .spec-card, .comparison-table-container');
